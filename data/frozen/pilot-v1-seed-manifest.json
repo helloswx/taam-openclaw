@@ -1,0 +1,82 @@
+{
+  "campaign_id": "pilot-v1",
+  "campaign_sha256": "ab6c3a692b94b7f9623b97cd01bc8238a43e19971bcd8f57605d28363ba61ea6",
+  "manifest_sha256": "c35311012e425156b3528f043e1054d52a543fe9e8cc64937cd1eee7cbc19562",
+  "schema_version": "taam-seed-manifest-v1",
+  "seed_count": 6,
+  "seeds": [
+    {
+      "paper_target": "delete_file",
+      "representative_source_case": "N-T0-01-web-memory-natural-r2",
+      "representative_source_path": "dataset/delete-file/curated/double-success/user_task_26/N-T0-01-web-memory-natural-r2/case.json",
+      "representative_source_sha256": "463b02ef217af85ee0ddfe7dfa6c9af986ae09ba93d9c2b769aac2111b4d6f04",
+      "reuse_role": "construction_seed; source outcome excluded from evaluation",
+      "seed_id": "delete_file::user_task_26",
+      "source_sibling_count": 6,
+      "user_task_id": "user_task_26"
+    },
+    {
+      "paper_target": "delete_file",
+      "representative_source_case": "MANUAL-T0-01-01-web-natural",
+      "representative_source_path": "dataset/delete-file/curated/double-success/user_task_27/MANUAL-T0-01-01-web-natural/case.json",
+      "representative_source_sha256": "34ae837f0af878bb0437c21ea61c38a1fbb8aef1a485a53f44b562d35ed540c9",
+      "reuse_role": "construction_seed; source outcome excluded from evaluation",
+      "seed_id": "delete_file::user_task_27",
+      "source_sibling_count": 13,
+      "user_task_id": "user_task_27"
+    },
+    {
+      "paper_target": "extra_calendar_event",
+      "representative_source_case": "CAL-B1-001-u15-email_plain",
+      "representative_source_path": "dataset/calendar-event/curated/double-success/user_task_15/CAL-B1-001-u15-email_plain/case.json",
+      "representative_source_sha256": "f8f7402d0ea79c782f4edbe79795621bdb8bdfa9cdf5290b4f8c2ddc656d1b03",
+      "reuse_role": "construction_seed; source outcome excluded from evaluation",
+      "seed_id": "extra_calendar_event::user_task_15",
+      "source_sibling_count": 52,
+      "user_task_id": "user_task_15"
+    },
+    {
+      "paper_target": "unauthorized_email_recipient",
+      "representative_source_case": "B1-05-search-memory-natural-control",
+      "representative_source_path": "dataset/send-email/curated/double-success/user_task_26/B1-05-search-memory-natural-control/case.json",
+      "representative_source_sha256": "601b2084f3a5292d386dadd2a86e2c265e62a07fb7c2bb99641d06a27923b491",
+      "reuse_role": "construction_seed; source outcome excluded from evaluation",
+      "seed_id": "unauthorized_email_recipient::user_task_26",
+      "source_sibling_count": 11,
+      "user_task_id": "user_task_26"
+    },
+    {
+      "paper_target": "unauthorized_email_recipient",
+      "representative_source_case": "B2-01-email-memory-project",
+      "representative_source_path": "dataset/send-email/curated/double-success/user_task_27/B2-01-email-memory-project/case.json",
+      "representative_source_sha256": "2a886bc88c695fa0fdf3bb6a1c5c224c3d6f9f09d9b4836783257e8a268dd7ca",
+      "reuse_role": "construction_seed; source outcome excluded from evaluation",
+      "seed_id": "unauthorized_email_recipient::user_task_27",
+      "source_sibling_count": 10,
+      "user_task_id": "user_task_27"
+    },
+    {
+      "paper_target": "unauthorized_file_sharing",
+      "representative_source_case": "CM-R01-U1-email-delayed-replay",
+      "representative_source_path": "dataset/share-file/curated/double-success/commit-mode/10-scoped-normal-only/CM-R01-U1-email-delayed-replay/case.json",
+      "representative_source_sha256": "98a69629824fbf2973e5748e0a34a3047bf5cd32e7eb7d30da6d82eb96716b32",
+      "reuse_role": "construction_seed; source outcome excluded from evaluation",
+      "seed_id": "unauthorized_file_sharing::user_task_0",
+      "source_sibling_count": 62,
+      "user_task_id": "user_task_0"
+    }
+  ],
+  "selection_policy": {
+    "max_seeds_per_target": 2,
+    "representative_policy": "lexicographic_case_id",
+    "require_custom_target_success": true,
+    "require_task_success": true,
+    "targets": [
+      "delete_file",
+      "unauthorized_email_recipient",
+      "extra_calendar_event",
+      "unauthorized_file_sharing"
+    ],
+    "unit": "user_task_id"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "taam-source-pool-v1",
+  "source_repository": "../openclaw-longrange-manual-lab",
+  "targets": {
+    "delete-file": {"paper_target": "delete_file", "expected_curated_cases": 46},
+    "send-email": {"paper_target": "unauthorized_email_recipient", "expected_curated_cases": 49},
+    "calendar-event": {"paper_target": "extra_calendar_event", "expected_curated_cases": 52},
+    "share-file": {"paper_target": "unauthorized_file_sharing", "expected_curated_cases": 62}
+  },
+  "source_glob": "dataset/{target}/curated/double-success/**/case.json",
+  "read_only": true
+}
+

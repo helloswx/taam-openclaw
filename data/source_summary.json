@@ -1,0 +1,22 @@
+{
+  "cases_by_target": {
+    "delete_file": 46,
+    "extra_calendar_event": 52,
+    "unauthorized_email_recipient": 49,
+    "unauthorized_file_sharing": 62
+  },
+  "schema_version": "taam-source-summary-v1",
+  "scientific_status": "successful mutation library; not an ASR denominator",
+  "source_repository": "/Users/wenxiang/Documents/codexwork/longattackdefense/openclaw-longrange-manual-lab",
+  "source_victim_models": {
+    "deepseek/deepseek-v4-flash": 209
+  },
+  "task_groups_by_target": {
+    "delete_file": 4,
+    "extra_calendar_event": 1,
+    "unauthorized_email_recipient": 6,
+    "unauthorized_file_sharing": 1
+  },
+  "total_cases": 209,
+  "total_task_groups": 12
+}

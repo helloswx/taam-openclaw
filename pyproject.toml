@@ -1,0 +1,9 @@
+[project]
+name = "taam-openclaw"
+version = "0.1.0"
+description = "Outcome-complete evaluation of trajectory-aware prompt-injection mutations"
+requires-python = ">=3.10"
+
+[tool.ruff]
+line-length = 100
+

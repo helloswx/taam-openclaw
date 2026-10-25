@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/taam/source-case.schema.json",
+  "title": "TAAM source case catalog record",
+  "type": "object",
+  "required": ["schema_version", "source_path", "source_sha256", "case_id", "paper_target", "user_task_id", "reuse_role"],
+  "properties": {
+    "schema_version": {"const": "taam-source-case-v1"},
+    "source_path": {"type": "string"},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "case_id": {"type": "string"},
+    "paper_target": {"type": "string"},
+    "user_task_id": {"type": "string"},
+    "reuse_role": {"const": "mutation_library_only"}
+  }
+}
+

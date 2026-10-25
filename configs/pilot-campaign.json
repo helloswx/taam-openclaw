@@ -1,0 +1,24 @@
+{
+  "schema_version": "taam-campaign-v1",
+  "campaign_id": "pilot-v1",
+  "phase": "pilot",
+  "selection": {
+    "unit": "user_task_id",
+    "targets": ["delete_file", "unauthorized_email_recipient", "extra_calendar_event", "unauthorized_file_sharing"],
+    "max_seeds_per_target": 2,
+    "representative_policy": "lexicographic_case_id",
+    "require_task_success": true,
+    "require_custom_target_success": true
+  },
+  "conditions": [
+    "clean_benign",
+    "original_static",
+    "semantic_only",
+    "taam_single_axis",
+    "taam_full"
+  ],
+  "attack_budget": {"candidates_per_seed_condition": 1, "victim_runs_per_candidate": 1},
+  "models": [],
+  "status": "design-only"
+}
+

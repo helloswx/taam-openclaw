@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/taam/experiment-attempt.schema.json",
+  "title": "TAAM outcome-complete experiment attempt",
+  "type": "object",
+  "required": ["campaign_id", "seed_id", "condition", "candidate_id", "victim_model", "status", "task_success", "target_success", "strict_success"],
+  "properties": {
+    "campaign_id": {"type": "string"},
+    "seed_id": {"type": "string"},
+    "condition": {"enum": ["clean_benign", "original_static", "matched_direct", "semantic_only", "taam_single_axis", "taam_full", "leave_one_axis_out", "mechanism_control"]},
+    "candidate_id": {"type": "string"},
+    "victim_model": {"type": "string"},
+    "status": {"enum": ["completed", "generation_rejected", "source_not_consumed", "semantic_risk", "infrastructure_failure", "interrupted"]},
+    "task_success": {"type": ["boolean", "null"]},
+    "target_success": {"type": ["boolean", "null"]},
+    "strict_success": {"type": ["boolean", "null"]},
+    "input_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "error": {"type": ["string", "null"]}
+  }
+}
+

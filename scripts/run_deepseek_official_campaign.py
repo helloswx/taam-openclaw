@@ -217,9 +217,14 @@ def main() -> int:
         for condition in args.conditions:
             case_id = f"DS-P1-{condition.upper().replace('_', '-')}-{target.upper()}-{user_task_id}-R{args.repetition}"
             events = prompts_for(task.PROMPT, condition, carrier, injection_task.GOAL, target)
-            plan = write_plan(case_id, events)
+            plan = PLAN_ROOT / f"{case_id}.jsonl"
             out_dir = OUT_ROOT / case_id
             case_path = out_dir / "cases" / f"{case_id}.json"
+            # Existing outcome artifacts are immutable.  Reuse their frozen plan
+            # even when a later script revision would generate different text;
+            # only new executions may create a plan.
+            if not case_path.exists():
+                plan = write_plan(case_id, events)
             row: dict[str, object] = {
                 "case_id": case_id,
                 "target": target,
@@ -228,7 +233,7 @@ def main() -> int:
                 "condition": condition,
                 "repetition": args.repetition,
                 "plan": str(plan.relative_to(REPO)),
-                "plan_sha256": hashlib.sha256(plan.read_bytes()).hexdigest(),
+                "plan_sha256": hashlib.sha256(plan.read_bytes()).hexdigest() if plan.exists() else None,
                 "status": "existing" if case_path.exists() else "pending",
             }
             if case_path.exists():

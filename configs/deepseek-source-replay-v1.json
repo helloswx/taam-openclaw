@@ -4,7 +4,8 @@
   "victim": {
     "provider": "deepseek_official",
     "model": "deepseek-chat",
-    "endpoint": "https://api.deepseek.com"
+    "endpoint": "https://api.deepseek.com",
+    "effective_response_model_observation": "deepseek-flash (OpenClaw terminal receipt; requested model was deepseek-chat)"
   },
   "replay_policy": {
     "visible_prompts": "frozen_from_source_case",

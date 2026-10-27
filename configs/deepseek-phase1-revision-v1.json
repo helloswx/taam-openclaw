@@ -25,6 +25,13 @@
     "seed_ids": ["user_task_26", "user_task_27", "user_task_28", "user_task_30", "user_task_34"],
     "artifact_manifest": "runs/deepseek-phase1/deepseek-phase1-live-manifest.json"
   },
+  "executed_extension": {
+    "seed_count": 15,
+    "executions": 60,
+    "repetitions": 1,
+    "artifact_manifest": "runs/deepseek-phase1/deepseek-phase1-live-manifest.json",
+    "effective_response_model_observation": "deepseek-flash (OpenClaw terminal receipt; requested model was deepseek-chat)"
+  },
   "revision_boundary": {
     "pilot_revision": "The first U26 memory replay used a generic prompt and was retained as an exploratory failure.",
     "new_campaign_rule": "The target-specific maintenance wording and successful trajectory structure are frozen before this revision batch; revision results are not pooled with the generic pilot."

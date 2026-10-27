@@ -2,10 +2,11 @@
 
 This note records an exploratory transfer check, not a benchmark denominator.
 The selected cases were already labeled successful in the attack repository;
-the replay changes the victim endpoint to the registered DeepSeek chat model,
+the replay changes the victim endpoint to the registered DeepSeek chat request,
 keeps the visible prompts and tool-return fixtures frozen, and records a new
-OpenClaw trace. The source case SHA-256 and replay plan SHA-256 are stored in
-each ignored `source-replay-manifest.json`.
+OpenClaw trace. The receipts identify `deepseek-flash` as the effective
+response model after endpoint rerouting. The source case SHA-256 and replay
+plan SHA-256 are stored in each ignored `source-replay-manifest.json`.
 
 ## Aggregate
 

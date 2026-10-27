@@ -78,6 +78,16 @@ and a long email-prefix case produced the target email without consuming its
 frozen carrier; both are retained as attack-only or source-not-consumed
 outcomes rather than strict successes.
 
+The pre-frozen extension in `configs/source-transfer-extension-v1.json` adds
+12 new source case IDs across the same three target families. It yields 6
+target effects, 10 task successes, and 3 strict endpoints (25.0%, Wilson 95%
+CI [8.9%, 53.2%]). The two initial document-fixture profile failures were
+retained and then replayed with the corrected workspace-plus profile; the
+corrected artifacts are the model outcomes. Across the initial and extension
+executions there are 26 executions from 21 unique source case IDs: 18 target
+effects, 22 task successes, and 11 strict endpoints. This execution-level
+aggregate is descriptive and remains conditional on the validated source pool.
+
 These source replays are the primary conditional transfer measurement over a
 validated success pool. They are not intended to estimate attack prevalence over
 all AgentDojo tasks.

@@ -165,9 +165,14 @@ def main() -> int:
             raise RuntimeError(f"frozen injection plan differs: {injection_path}")
         if not injection_path.exists():
             injection_path.write_text(injection_text, encoding="utf-8")
+    # The workspace-plus profile is required for every tool whose fixture is
+    # outside the minimal AgentDojo workspace contract.  Keep this list
+    # explicit so a new source case fails loudly rather than silently running
+    # under an incompatible profile.
+    plus_tools = {"mock_web_fetch", "mock_exec", "mock_document_open"}
     has_plus_tool = any(
-        event.get("tool") in {"mock_web_fetch", "mock_exec"} for event in events
-    ) or any(item.get("tool") in {"mock_web_fetch", "mock_exec"} for item in injections if isinstance(item, dict))
+        event.get("tool") in plus_tools for event in events
+    ) or any(item.get("tool") in plus_tools for item in injections if isinstance(item, dict))
     command = [
         str(PYTHON), str(RUNNER),
         "--env-file", str(ENV_FILE),

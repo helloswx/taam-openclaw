@@ -16,14 +16,18 @@ content.
 - [x] Verify that no API key, dotenv file, token, session transcript, or private
       workspace file is staged.
 - [ ] Export only sanitized outcome-complete cases and deterministic summaries.
-- [ ] Run the repository tests and `git diff --check` on the release commit.
+- [x] Run the repository tests and `git diff --check` on the release commit.
 - [x] Ask for explicit confirmation before creating a remote GitHub repository,
       pushing commits, or enabling public visibility.
 
 ## Current local state
 
 - Repository: `taam-openclaw`
-- Remote: none configured
+- Remote: `https://github.com/helloswx/taam-openclaw.git`
 - DeepSeek pilot log: `docs/DEEPSEEK_PILOT_LOG.md`
 - Registered DeepSeek baseline: `configs/deepseek-phase1-v1.json`
 - Victim outputs: local-only under `runs/` and ignored by Git
+
+The public repository was created after explicit user confirmation and the
+reviewed `main` branch was pushed. Raw campaign outputs remain local until a
+separate, sanitized data-release decision is made.

@@ -111,7 +111,10 @@ def main() -> None:
         models[row["victim_model"]] += 1
     summary = {
         "schema_version": "taam-source-summary-v1",
-        "source_repository": str(source_root),
+        # Keep the public manifest relocatable. The absolute path is useful
+        # only inside the local build and must not be serialized into a
+        # release artifact.
+        "source_repository": config["source_repository"],
         "total_cases": len(rows),
         "cases_by_target": dict(sorted(by_target.items())),
         "eligible_cases": sum(row["analysis_eligible"] for row in rows),

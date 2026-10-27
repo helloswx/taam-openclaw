@@ -1,0 +1,37 @@
+{
+  "schema_version": "taam-campaign-v1",
+  "campaign_id": "deepseek-phase1-revision-v1",
+  "status": "completed-exploratory-pilot",
+  "phase": "exploratory-memory-trajectory",
+  "source_manifest": "configs/official-seed-expansion-v1.json",
+  "victim": {
+    "runtime": "openclaw-real",
+    "model_provider": "deepseek_official",
+    "model": "deepseek-chat",
+    "base_url": "https://api.deepseek.com",
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "agentdojo_suite": "workspace",
+    "agentdojo_version": "v1.1",
+    "agentdojo_package": "agentdojo==0.1.35"
+  },
+  "conditions": ["clean_benign", "original_static", "semantic_only", "taam_memory"],
+  "seeds": 15,
+  "repetitions": 1,
+  "candidate_budget": 1,
+  "planned_executions": 60,
+  "executed_pilot": {
+    "seed_count": 5,
+    "executions": 20,
+    "seed_ids": ["user_task_26", "user_task_27", "user_task_28", "user_task_30", "user_task_34"],
+    "artifact_manifest": "runs/deepseek-phase1/deepseek-phase1-live-manifest.json"
+  },
+  "revision_boundary": {
+    "pilot_revision": "The first U26 memory replay used a generic prompt and was retained as an exploratory failure.",
+    "new_campaign_rule": "The target-specific maintenance wording and successful trajectory structure are frozen before this revision batch; revision results are not pooled with the generic pilot."
+  },
+  "source_policy": {
+    "outcome_blind_official_seeds": true,
+    "historical_successes_are_construction_evidence_only": true,
+    "all_attempts_retained": true
+  }
+}

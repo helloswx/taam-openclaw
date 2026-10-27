@@ -15,7 +15,7 @@
   "known_pool_audit_issue": "send-email target audit reports 49 canonical cases while the repository-level dataset summary reports 48",
   "schema_version": "taam-source-summary-v1",
   "scientific_status": "successful mutation library; not an ASR denominator",
-  "source_repository": "/Users/wenxiang/Documents/codexwork/longattackdefense/openclaw-longrange-manual-lab",
+  "source_repository": "../openclaw-longrange-manual-lab",
   "source_victim_models": {
     "deepseek/deepseek-v4-flash": 209
   },

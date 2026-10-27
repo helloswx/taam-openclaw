@@ -39,3 +39,11 @@ python3 -m unittest discover -s tests
 No external API call is made by these commands. Victim-model execution is a
 separate registered step and is not started automatically.
 
+## License and data provenance
+
+Original code and documentation are released under the Apache License 2.0.
+The manifests and summaries in `data/` are derived research artifacts; they do
+not redistribute the AgentDojo or OpenClaw source repositories. Their use is
+subject to the terms of the upstream projects and to the provenance notes in
+`DATA_NOTICE.md`.
+

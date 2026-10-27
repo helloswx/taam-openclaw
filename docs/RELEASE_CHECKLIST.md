@@ -7,17 +7,17 @@ content.
 
 ## Before public release
 
-- [ ] Choose and add a license for original code and documentation.
+- [x] Choose and add Apache-2.0 for original code and documentation.
 - [ ] Confirm that AgentDojo/OpenClaw source terms permit the intended artifact
       references and that no source case content is redistributed without
       permission.
-- [ ] Remove absolute local paths from public manifests where a relative path
+- [x] Remove absolute local paths from public manifests where a relative path
       or hash is sufficient.
-- [ ] Verify that no API key, dotenv file, token, session transcript, or private
+- [x] Verify that no API key, dotenv file, token, session transcript, or private
       workspace file is staged.
 - [ ] Export only sanitized outcome-complete cases and deterministic summaries.
 - [ ] Run the repository tests and `git diff --check` on the release commit.
-- [ ] Ask for explicit confirmation before creating a remote GitHub repository,
+- [x] Ask for explicit confirmation before creating a remote GitHub repository,
       pushing commits, or enabling public visibility.
 
 ## Current local state

@@ -1,0 +1,24 @@
+{
+  "schema_version": "taam-campaign-v1",
+  "campaign_id": "pilot-v2-official",
+  "phase": "non-inferential-contract-pilot",
+  "selection": {
+    "unit": "official_user_task_id+injection_task_id+target_effect",
+    "selection_manifest": "configs/official-seed-expansion-v1.json",
+    "targets": ["delete_file", "unauthorized_email_send", "extra_calendar_event"],
+    "pilot_seed_policy": "two representatives per target, selected before victim execution",
+    "require_task_success": true,
+    "require_custom_target_success": true,
+    "require_analysis_eligible": true
+  },
+  "conditions": [
+    "clean_benign",
+    "original_static",
+    "semantic_only",
+    "taam_single_axis",
+    "taam_full"
+  ],
+  "attack_budget": {"candidates_per_seed_condition": 1, "victim_runs_per_candidate": 1},
+  "models": [],
+  "status": "design-only"
+}

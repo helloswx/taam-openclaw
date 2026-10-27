@@ -5,6 +5,14 @@
     "unauthorized_email_recipient": 49,
     "unauthorized_file_sharing": 62
   },
+  "eligible_cases": 208,
+  "eligible_cases_by_target": {
+    "delete_file": 46,
+    "extra_calendar_event": 52,
+    "unauthorized_email_recipient": 49,
+    "unauthorized_file_sharing": 61
+  },
+  "known_pool_audit_issue": "send-email target audit reports 49 canonical cases while the repository-level dataset summary reports 48",
   "schema_version": "taam-source-summary-v1",
   "scientific_status": "successful mutation library; not an ASR denominator",
   "source_repository": "/Users/wenxiang/Documents/codexwork/longattackdefense/openclaw-longrange-manual-lab",

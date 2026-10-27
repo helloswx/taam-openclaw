@@ -20,6 +20,12 @@ class CatalogTest(unittest.TestCase):
         groups = {(row["paper_target"], row["user_task_id"]) for row in self.rows}
         self.assertEqual(len(groups), 12)
 
+    def test_analysis_eligibility(self):
+        eligible = [row for row in self.rows if row["analysis_eligible"]]
+        excluded = [row for row in self.rows if not row["analysis_eligible"]]
+        self.assertEqual(len(eligible), 208)
+        self.assertEqual([row["case_id"] for row in excluded], ["COMMIT-SMOKE-01"])
+
     def test_source_hashes_and_roles(self):
         self.assertTrue(all(len(row["source_sha256"]) == 64 for row in self.rows))
         self.assertTrue(all(row["reuse_role"] == "mutation_library_only" for row in self.rows))

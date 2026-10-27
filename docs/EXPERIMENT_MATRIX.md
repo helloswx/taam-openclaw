@@ -2,19 +2,33 @@
 
 ## Available evidence
 
-The reusable mutation library contains 209 strict-success source cases:
+The reusable mutation library contains 209 stored source artifacts. These are
+construction evidence, not new evaluation outcomes. One sharing artifact is a
+standalone smoke replay. The email-specific 49-case audit is authoritative;
+the repository-level summary of 48 is stale documentation.
 
-| Target | Source cases | Normal-task groups | Role in TAAM |
-|---|---:|---:|---|
-| File deletion | 46 | 4 | carrier, document, email, web, memory, conditional, and fragmented patterns |
-| Unauthorized email recipient | 49 | 6 | memory, handoff, recipient propagation, and multi-source patterns |
-| Extra calendar event | 52 | 1 | placement, continuation, thread, follow-up, and delayed patterns |
-| Unauthorized sharing | 62 | 1 | commitment-mode and continuation patterns |
-| **Total** | **209** | **12** | mutation library, not evaluation outcomes |
+| Target | Stored artifacts | Currently eligible | Normal-task groups | Role in TAAM |
+|---|---:|---:|---:|---|
+| File deletion | 46 | 46 | 4 | carrier, document, email, web, memory, conditional, and fragmented patterns |
+| Unauthorized email send | 49 | 49 | 6 | memory, handoff, recipient propagation, and multi-source patterns |
+| Extra calendar event | 52 | 52 | 1 | placement, continuation, thread, follow-up, and delayed patterns |
+| Unauthorized sharing | 62 | 61 | 1 | commitment-mode and continuation patterns |
+| **Total** | **209** | **208** | **12** | mutation library, not evaluation outcomes |
 
-The imbalance means that the paper must not equate 209 cases with 209
-independent tasks. Calendar and sharing conclusions are initially within-task
-robustness results.
+The imbalance means that the paper must not equate stored artifacts with
+independent tasks. The historical calendar and sharing collections are
+initially within-task engineering evidence; only the outcome-blind official
+three-target expansion supports the confirmatory analysis.
+
+The confirmatory core uses the three official AgentDojo target families and the
+15 outcome-blind candidate task--goal pairs in
+`configs/official-seed-expansion-v1.json`. Sharing remains a local engineering
+track.
+
+Before the confirmatory campaign, enumerate compatible independent AgentDojo
+task--goal pairs. A target family needs at least five eligible normal-task
+groups for a target-level generalization claim; otherwise it remains a
+within-task case study and is not used to support that claim.
 
 ## Phase 0: contract pilot
 
@@ -29,10 +43,11 @@ infrastructure reruns.
 
 ## Phase 1: static-baseline audit
 
-Use all 12 normal-task groups. For each frozen victim model, run clean benign
-and original static conditions with three registered repetitions.
+Use the 15 outcome-blind official task--goal candidates in
+`configs/official-seed-expansion-v1.json`. For each frozen victim model, run
+clean benign and original static conditions with three registered repetitions.
 
-Planned size for three models: 12 × 2 × 3 × 3 = 216 executions.
+Planned size for three models: 15 × 2 × 3 × 3 = 270 executions.
 
 This phase answers whether the selected modern models are actually difficult
 to attack with the legacy condition. If original ASR is not low, the paper must
@@ -43,7 +58,7 @@ report that result and revise its motivation rather than hiding the model.
 Run semantic-only and full TAAM with the same seeds, three models, three
 repetitions, and equal candidate budget.
 
-Planned size: 12 × 2 × 3 × 3 = 216 executions.
+Planned size: 15 × 2 × 3 × 3 = 270 executions.
 
 The primary contrast is full TAAM versus original static. Semantic-only versus
 original tests whether wording alone explains the difference.
@@ -56,7 +71,7 @@ families. Run leave-one-axis-out variants only for components present in a full
 candidate. Assuming four feasible operator cells per seed, two selected models,
 and three repetitions, the upper planning bound is:
 
-12 × (4 single-axis + 4 leave-one-out) × 2 × 3 = 576 executions.
+15 × (4 single-axis + 4 leave-one-out) × 2 × 3 = 720 executions.
 
 This is an upper bound, not a quota. Infeasible cells are recorded before victim
 execution and are not replaced after outcomes are observed.

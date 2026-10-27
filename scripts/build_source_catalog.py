@@ -53,11 +53,13 @@ def record(path: Path, source_root: Path, target: str, paper_target: str) -> dic
     plan = case.get("injection_payload_or_plan") or {}
     events = plan.get("input_events") or []
     prompts = plan.get("prompts") or []
+    case_id = case.get("case_id")
+    is_smoke_replay = target == "share-file" and case_id == "COMMIT-SMOKE-01"
     return {
         "schema_version": "taam-source-case-v1",
         "source_path": str(path.relative_to(source_root)),
         "source_sha256": sha256(path),
-        "case_id": case.get("case_id"),
+        "case_id": case_id,
         "source_target": target,
         "paper_target": paper_target,
         "seed_suite": case.get("seed_suite"),
@@ -76,6 +78,8 @@ def record(path: Path, source_root: Path, target: str, paper_target: str) -> dic
             labels.get("task_success", run.get("task_success", False))
             and labels.get("custom_target_success", run.get("custom_target_success", False))
         ),
+        "analysis_eligible": not is_smoke_replay,
+        "eligibility_note": "standalone_smoke_replay" if is_smoke_replay else "eligible_pending_pool_audit",
         "has_target_oracle": bool(case.get("success_oracle")),
         "has_frozen_plan": bool(prompts or events),
         "has_tool_trace": bool((case.get("execution") or {}).get("tool_call_trace")),
@@ -99,6 +103,7 @@ def main() -> None:
     OUT_JSONL.write_text("".join(json.dumps(row, sort_keys=True) + "\n" for row in rows), encoding="utf-8")
 
     by_target = Counter(row["paper_target"] for row in rows)
+    eligible_by_target = Counter(row["paper_target"] for row in rows if row["analysis_eligible"])
     tasks = defaultdict(set)
     models = Counter()
     for row in rows:
@@ -109,9 +114,12 @@ def main() -> None:
         "source_repository": str(source_root),
         "total_cases": len(rows),
         "cases_by_target": dict(sorted(by_target.items())),
+        "eligible_cases": sum(row["analysis_eligible"] for row in rows),
+        "eligible_cases_by_target": dict(sorted(eligible_by_target.items())),
         "task_groups_by_target": {key: len(value) for key, value in sorted(tasks.items())},
         "total_task_groups": sum(len(value) for value in tasks.values()),
         "source_victim_models": dict(sorted(models.items())),
+        "known_pool_audit_issue": "send-email target audit reports 49 canonical cases while the repository-level dataset summary reports 48",
         "scientific_status": "successful mutation library; not an ASR denominator",
     }
     OUT_SUMMARY.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")

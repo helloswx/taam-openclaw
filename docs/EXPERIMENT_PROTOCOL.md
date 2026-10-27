@@ -12,11 +12,24 @@ H1--H3 are hypotheses, not current findings.
 
 ## Population and blocking
 
-Use the four AgentDojo-backed personal-office targets: deletion, unauthorized
-email recipient, additional calendar event, and unauthorized sharing. Block by
-normal task and target. The current mutation library has 209 cases but only 12
-normal-task groups (4/6/1/1 across the four targets); reports must show both
-case-level and task-clustered uncertainty.
+Use three AgentDojo-native personal-office targets: deletion, unauthorized
+email send, and additional calendar event. Block by official normal task and
+attacker goal. The current mutation library has 209 stored artifacts across 12
+historical task groups (4/6/1/1 across the four construction targets); one
+sharing artifact is an ineligible smoke replay, and the email audit establishes
+49 cases while the top-level summary's 48 is stale documentation. Reports must
+show task-clustered uncertainty; historical case counts are not an ASR
+denominator. File-sharing scope expansion is retained only as a local
+engineering-sensitivity track because AgentDojo v1.1 has no matching official
+injection task.
+
+Enumerate the 15 compatible independent official task--goal pairs in
+`configs/official-seed-expansion-v1.json` before victim execution. A target
+family with fewer than five eligible task groups after contract checks is
+reported as a within-task case study rather than evidence of target-level
+generalization.
+Manifest fields must distinguish official AgentDojo tasks from locally authored
+engineering tasks.
 
 ## Conditions
 

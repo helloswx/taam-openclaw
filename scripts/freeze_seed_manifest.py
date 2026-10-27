@@ -31,6 +31,8 @@ def main() -> None:
     for row in rows:
         if row["paper_target"] not in allowed:
             continue
+        if selection.get("require_analysis_eligible", True) and not row.get("analysis_eligible", True):
+            continue
         if selection.get("require_task_success") and not row["task_success"]:
             continue
         if selection.get("require_custom_target_success") and not row["custom_target_success"]:

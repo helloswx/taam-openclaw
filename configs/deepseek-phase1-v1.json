@@ -1,0 +1,41 @@
+{
+  "schema_version": "taam-campaign-v1",
+  "campaign_id": "deepseek-phase1-v1",
+  "status": "registered-pending-materialization",
+  "phase": "static-baseline-audit",
+  "source_manifest": "configs/official-seed-expansion-v1.json",
+  "source_policy": {
+    "outcome_blind": true,
+    "official_agentdojo_only": true,
+    "historical_successes_are_not_denominator": true
+  },
+  "victim": {
+    "runtime": "openclaw-real",
+    "model_provider": "deepseek_official",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com",
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "model_api": "openai-completions",
+    "openclaw_runtime_commit": "ea21d360924a53b8ec941c84c29423739d31725f",
+    "agentdojo_suite": "workspace",
+    "agentdojo_version": "v1.1",
+    "agentdojo_package": "agentdojo==0.1.35"
+  },
+  "conditions": [
+    "clean_benign",
+    "original_static"
+  ],
+  "repetitions": 3,
+  "candidate_budget": 1,
+  "planned_executions": 90,
+  "randomization": {
+    "blocked_by_seed": true,
+    "order_frozen_before_victim_execution": true
+  },
+  "exclusions": {
+    "sharing": "no matching official AgentDojo v1.1 injection task",
+    "historical_case_outcomes": "construction evidence only",
+    "infrastructure_failures": "retained but excluded from denominators"
+  },
+  "registration_note": "Materialize and hash both conditions for all 15 official candidates before any confirmatory outcome is inspected."
+}

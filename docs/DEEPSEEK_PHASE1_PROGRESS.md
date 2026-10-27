@@ -5,7 +5,7 @@ Victim request: `deepseek-chat` through the official DeepSeek API; OpenClaw
 terminal receipts record `deepseek-flash` as the effective response model for
 these runs because the endpoint rerouted the request.  
 Runtime: OpenClaw real gateway + AgentDojo workspace v1.1 mock services  
-Status: exploratory single-model campaign complete; not the final multi-model campaign
+Status: primary validated-case transfer complete; official-seed results are a secondary control track
 
 ## Completed matched pair
 
@@ -41,7 +41,7 @@ The initial R1 generic-memory replay and the earlier `deepseek-flash` runs are
 retained as failed engineering attempts under `runs/`; they are not pooled with
 the R3 revision because the victim model and/or frozen wording differ.
 
-## Fifteen-seed extension (revision R1)
+## Secondary official-seed control (revision R1)
 
 The full registered seed list was then executed once: five delete-file pairs,
 five unauthorized-email pairs, and five extra-calendar-event pairs, under all
@@ -78,8 +78,9 @@ and a long email-prefix case produced the target email without consuming its
 frozen carrier; both are retained as attack-only or source-not-consumed
 outcomes rather than strict successes.
 
-These source replays are a conditional transfer diagnostic over a curated
-success pool, not an unbiased estimate of attack prevalence.
+These source replays are the primary conditional transfer measurement over a
+validated success pool. They are not intended to estimate attack prevalence over
+all AgentDojo tasks.
 
 ## Run artifacts
 
@@ -93,8 +94,8 @@ sanitized and approved.
 
 ## Interpretation boundary
 
-The R3 pilot, the R1 extension, and the source-replay results are progress
-evidence and exploratory transfer measurements, not a final cross-model ASR
-estimate. Confirmatory statistics remain locked until independent repetitions
-and additional victim models are run, including failed, source-not-consumed,
-and infrastructure outcomes.
+The source replay is the main result for the current paper. The R3 pilot and
+official-seed control are contextual evidence, not pooled with the transfer
+rate. Independent repetitions and additional victim models would be needed for
+a cross-model robustness claim; all failed, source-not-consumed, and
+infrastructure outcomes remain retained.
